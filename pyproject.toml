@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools==78.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tool-calling-lab"
+version = "0.1.0"
+description = "Reproducible instruction-to-tool execution experiments with optional local LoRA training"
+requires-python = ">=3.11"
+dependencies = []
+
+readme = "README.md"
+license = "MIT"
+
+[project.optional-dependencies]
+ml = ["torch>=2.2", "transformers>=4.45,<5", "peft>=0.13", "accelerate>=1", "datasets>=3"]
+
+[project.scripts]
+tool-calling-lab = "tool_calling_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

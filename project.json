@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "id": "01",
+  "repository_name": "tool-calling-lab",
+  "title": "Small-Model Tool-Calling Lab",
+  "package": "tool_calling_lab",
+  "focus": "Synthetic data, supervised fine-tuning, tool validation, execution scoring",
+  "layout": {
+    "docs_root": "notes",
+    "tests_root": "tests",
+    "tools_root": "bin",
+    "config_root": "recipes",
+    "examples_root": "samples",
+    "verifier": "bin/check_training.py",
+    "source_roots": [
+      "src"
+    ],
+    "documents": {
+      "architecture": "notes/robot-execution.md",
+      "design": "notes/preference-optimization.md",
+      "review": "notes/contract-findings.md",
+      "experiments": "notes/recorded-runs.md",
+      "publishing": "notes/sharing-checkpoints.md",
+      "validation": "notes/checks-and-reproduction.md"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+artifacts/
+.env
+*.safetensors
+*.bin
+
+# Independent repository tooling
+.venv/
+__pycache__/
+*.egg-info/
+.ruff_cache/
+build/
+dist/
+.env
+.env.*
+!.env.example
