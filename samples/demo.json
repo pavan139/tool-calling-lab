@@ -1,0 +1,132 @@
+{
+  "system": "deterministic handwritten reference, NOT trained-model accuracy",
+  "dataset": "synthetic controlled-language robot tasks",
+  "dataset_sha256": "7e20f5a24c9b6519e779f8e7d26861418ba394a16ee5d79998164e9197537d60",
+  "suites": [
+    "compositional"
+  ],
+  "count": 3,
+  "goal_oracle": "independently constructed final-state labels plus canonical action traces",
+  "metrics": {
+    "schema_valid": 1.0,
+    "executable": 1.0,
+    "exact_calls": 1.0,
+    "execution_success": 1.0,
+    "instruction_success": 1.0
+  },
+  "cases": [
+    {
+      "id": "composition-test-17-00000",
+      "instruction": "Move 1 spaces toward east. Move 1 spaces toward south. Take scroll. Move 3 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 3,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            6
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 3,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00001",
+      "instruction": "Move 3 spaces toward south. Take scroll. Move 2 spaces toward south. Move 1 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 5,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            5,
+            6
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 5,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00002",
+      "instruction": "Move 2 spaces toward north. Move 2 spaces toward west. Take relic. Move 1 spaces toward east. Move 1 spaces toward west. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 4,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            2
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            2
+          ]
+        ]
+      }
+    }
+  ],
+  "unrun_workflows": [
+    "base-model evaluation",
+    "LoRA training",
+    "adapter evaluation"
+  ],
+  "learned_model_evaluated": false,
+  "split": "test",
+  "seed": 17
+}
