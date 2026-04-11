@@ -1,0 +1,1287 @@
+{
+  "system": "deterministic handwritten reference, NOT trained-model accuracy",
+  "dataset": "synthetic controlled-language robot tasks",
+  "dataset_sha256": "028196016628fea489534c14e21877326041276bcd14a0ab47e470c06d457e40",
+  "suites": [
+    "compositional"
+  ],
+  "count": 36,
+  "goal_oracle": "independently constructed final-state labels plus canonical action traces",
+  "metrics": {
+    "schema_valid": 1.0,
+    "executable": 1.0,
+    "exact_calls": 1.0,
+    "execution_success": 1.0,
+    "instruction_success": 1.0
+  },
+  "cases": [
+    {
+      "id": "composition-test-17-00000",
+      "instruction": "Move 1 spaces toward east. Move 1 spaces toward south. Take scroll. Move 3 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 3,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            6
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 3,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00001",
+      "instruction": "Move 3 spaces toward south. Take scroll. Move 2 spaces toward south. Move 1 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 5,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            5,
+            6
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 5,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00002",
+      "instruction": "Move 2 spaces toward north. Move 2 spaces toward west. Take relic. Move 1 spaces toward east. Move 1 spaces toward west. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 4,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            2
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00003",
+      "instruction": "Move 1 spaces toward north. Move 2 spaces toward east. Take gem. Move 3 spaces toward south. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 2,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            2,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 2,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            2,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00004",
+      "instruction": "Move 2 spaces toward east. Take relic. Move 3 spaces toward west. Move 3 spaces toward south. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 3,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            3,
+            6
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 3,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00005",
+      "instruction": "Move 1 spaces toward east. Move 2 spaces toward east. Take scroll. Move 1 spaces toward west. Move 3 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 2,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            2,
+            2
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 2,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            2,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00006",
+      "instruction": "Move 1 spaces toward east. Move 1 spaces toward east. Take relic. Move 3 spaces toward west. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 0,
+        "y": 0,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            0,
+            0
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 0,
+        "y": 0,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00007",
+      "instruction": "Move 1 spaces toward west. Take gem. Move 1 spaces toward east. Move 2 spaces toward west. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 4,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            4,
+            6
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            4,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00008",
+      "instruction": "Move 1 spaces toward north. Move 2 spaces toward west. Take gem. Move 1 spaces toward east. Move 1 spaces toward south. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 3,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            3,
+            3
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 3,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            3,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00009",
+      "instruction": "Move 2 spaces toward north. Move 2 spaces toward west. Take gem. Move 2 spaces toward north. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 2}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 3,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            3,
+            2
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 3,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            3,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00010",
+      "instruction": "Move 3 spaces toward west. Take relic. Move 3 spaces toward north. Move 3 spaces toward east. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 4,
+        "y": 1,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            1
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 1,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00011",
+      "instruction": "Move 3 spaces toward west. Move 1 spaces toward north. Take gem. Move 1 spaces toward west. Move 1 spaces toward west. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 0,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            0,
+            3
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 0,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00012",
+      "instruction": "Move 3 spaces toward south. Move 2 spaces toward north. Take relic. Move 3 spaces toward west. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 0,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            0,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 0,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            0,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00013",
+      "instruction": "Move 3 spaces toward west. Take relic. Move 1 spaces toward south. Move 1 spaces toward north. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 0,
+        "y": 0,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            0,
+            0
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 0,
+        "y": 0,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00014",
+      "instruction": "Move 3 spaces toward west. Move 2 spaces toward north. Take scroll. Move 3 spaces toward east. Move 3 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 0,
+        "y": 1,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            0,
+            1
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 0,
+        "y": 1,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00015",
+      "instruction": "Move 1 spaces toward east. Move 1 spaces toward south. Take scroll. Move 2 spaces toward east. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 4,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            4,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00016",
+      "instruction": "Move 2 spaces toward south. Take scroll. Move 1 spaces toward west. Move 1 spaces toward south. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 3,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            3
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 3,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00017",
+      "instruction": "Move 1 spaces toward east. Move 1 spaces toward north. Take relic. Move 1 spaces toward west. Move 2 spaces toward east. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 6,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            6,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 6,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            6,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00018",
+      "instruction": "Move 1 spaces toward west. Move 3 spaces toward north. Take scroll. Move 2 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 0,
+        "y": 0,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            0,
+            0
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 0,
+        "y": 0,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00019",
+      "instruction": "Move 1 spaces toward east. Take relic. Move 2 spaces toward west. Move 1 spaces toward north. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 0,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            0,
+            2
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 0,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            0,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00020",
+      "instruction": "Move 1 spaces toward south. Move 1 spaces toward west. Take gem. Move 3 spaces toward west. Move 1 spaces toward east. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 1,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            1,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 1,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            1,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00021",
+      "instruction": "Move 3 spaces toward south. Move 3 spaces toward east. Take relic. Move 2 spaces toward west. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 1,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            1,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 1,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            1,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00022",
+      "instruction": "Move 2 spaces toward south. Take scroll. Move 2 spaces toward north. Move 3 spaces toward south. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 4,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            4,
+            3
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            4,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00023",
+      "instruction": "Move 3 spaces toward east. Move 3 spaces toward south. Take scroll. Move 2 spaces toward west. Move 1 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 2,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            2,
+            6
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 2,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            2,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00024",
+      "instruction": "Move 3 spaces toward west. Move 2 spaces toward east. Take scroll. Move 1 spaces toward north. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 3,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            3
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 3,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00025",
+      "instruction": "Move 1 spaces toward west. Take gem. Move 2 spaces toward south. Move 1 spaces toward north. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 4,
+        "y": 5,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            4,
+            5
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 5,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00026",
+      "instruction": "Move 1 spaces toward north. Move 3 spaces toward west. Take relic. Move 1 spaces toward north. Move 1 spaces toward east. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 4,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00027",
+      "instruction": "Move 1 spaces toward west. Move 3 spaces toward north. Take relic. Move 1 spaces toward south. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 1,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            1,
+            2
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 1,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00028",
+      "instruction": "Move 2 spaces toward south. Take relic. Move 1 spaces toward north. Move 3 spaces toward south. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 4,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 4,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00029",
+      "instruction": "Move 3 spaces toward north. Move 1 spaces toward east. Take gem. Move 1 spaces toward west. Move 3 spaces toward south. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 5,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            5,
+            3
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 5,
+        "y": 3,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            5,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00030",
+      "instruction": "Move 1 spaces toward north. Move 1 spaces toward north. Take relic. Move 3 spaces toward south. Leave relic.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"relic\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"relic\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 6,
+        "y": 5,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            6,
+            5
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 6,
+        "y": 5,
+        "inventory": [],
+        "items": [
+          [
+            "relic",
+            6,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00031",
+      "instruction": "Move 2 spaces toward east. Take scroll. Move 3 spaces toward north. Move 2 spaces toward north. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 2}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 5,
+        "y": 0,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            5,
+            0
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 5,
+        "y": 0,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            5,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00032",
+      "instruction": "Move 3 spaces toward north. Move 3 spaces toward west. Take scroll. Move 2 spaces toward east. Move 2 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 2}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 1,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            1,
+            2
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 1,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00033",
+      "instruction": "Move 3 spaces toward south. Move 1 spaces toward west. Take gem. Move 1 spaces toward west. Leave gem.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"south\", \"steps\": 3}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"gem\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"gem\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMD",
+      "actual_state": {
+        "x": 2,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            2,
+            6
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 2,
+        "y": 6,
+        "inventory": [],
+        "items": [
+          [
+            "gem",
+            2,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00034",
+      "instruction": "Move 3 spaces toward west. Take scroll. Move 1 spaces toward north. Move 1 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 1}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MPMMD",
+      "actual_state": {
+        "x": 1,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            1,
+            4
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 1,
+        "y": 4,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            1,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "composition-test-17-00035",
+      "instruction": "Move 1 spaces toward east. Move 3 spaces toward north. Take scroll. Move 2 spaces toward east. Move 3 spaces toward west. Leave scroll.",
+      "output": "[{\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 1}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"north\", \"steps\": 3}}, {\"tool\": \"pick\", \"arguments\": {\"item\": \"scroll\"}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"east\", \"steps\": 2}}, {\"tool\": \"move\", \"arguments\": {\"direction\": \"west\", \"steps\": 3}}, {\"tool\": \"drop\", \"arguments\": {\"item\": \"scroll\"}}]",
+      "schema_valid": true,
+      "executable": true,
+      "exact_calls": true,
+      "execution_success": true,
+      "instruction_success": true,
+      "action_signature": "MMPMMD",
+      "actual_state": {
+        "x": 3,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            2
+          ]
+        ]
+      },
+      "expected_state": {
+        "x": 3,
+        "y": 2,
+        "inventory": [],
+        "items": [
+          [
+            "scroll",
+            3,
+            2
+          ]
+        ]
+      }
+    }
+  ],
+  "unrun_workflows": [
+    "base-model evaluation",
+    "LoRA training",
+    "adapter evaluation"
+  ],
+  "learned_model_evaluated": false,
+  "split": "test",
+  "seed": 17
+}
