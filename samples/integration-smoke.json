@@ -1,0 +1,10 @@
+{
+  "scope": "Integration smoke only: randomly initialized tiny GPT-2, not pretrained model quality",
+  "training_steps": 1,
+  "training_examples": 2,
+  "inference_cases": 1,
+  "inference_output": "\u001b\u001b\u001b\u001b",
+  "completion_only_labels": true,
+  "training_context": 1024,
+  "torch": "2.6.0+cpu"
+}
