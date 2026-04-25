@@ -1,0 +1,45 @@
+{
+  "scope": "Actual tiny random-model DPO integration, NOT pretrained quality or meaningful task accuracy",
+  "torch": "2.6.0+cpu",
+  "transformers": "4.57.1",
+  "device": "cpu",
+  "model": {
+    "layers": 1,
+    "embedding_size": 16,
+    "heads": 2,
+    "vocabulary": 457
+  },
+  "training_pairs": 4,
+  "optimizer_steps": 2,
+  "loss_history": [
+    {
+      "step": 1,
+      "loss": 0.6931471824645996,
+      "gradient_norm": 0.04143672436475754,
+      "case_id": "composition-train-17-00000",
+      "rejected_reward": 2
+    },
+    {
+      "step": 2,
+      "loss": 0.6931441426277161,
+      "gradient_norm": 0.14222508668899536,
+      "case_id": "composition-train-17-00002",
+      "rejected_reward": 1
+    }
+  ],
+  "bitwise_resumed_adapter_match": true,
+  "resumed_history_match": true,
+  "reference_parameters_with_grad": 0,
+  "training_dataset_sha256": "d9ce9003531f5a67c123198905c5b54d00f671205eefcbacd38e2497b4e7d8a7",
+  "heldout_split": "validation",
+  "heldout_cases": 2,
+  "heldout_preference_accuracy": 0.0,
+  "heldout_execution_metrics": {
+    "schema_valid": 0.0,
+    "executable": 0.0,
+    "exact_calls": 0.0,
+    "execution_success": 0.0,
+    "instruction_success": 0.0
+  },
+  "generation_budget": 4
+}
