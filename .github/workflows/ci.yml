@@ -1,0 +1,26 @@
+name: Tool execution and training checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e . -r requirements-dev.txt
+      - run: python bin/check_training.py --require-lint --wheel
+      # Artifact uploads are optional because storage quota exhaustion must not
+      # turn successful verification into a failed CI run. Set the repository
+      # variable UPLOAD_VERIFICATION_ARTIFACTS=true when quota is available.
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() && vars.UPLOAD_VERIFICATION_ARTIFACTS == 'true' }}
+        with:
+          name: verification-py${{ matrix.python }}
+          path: reports/verification.json
