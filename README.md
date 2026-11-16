@@ -1,5 +1,16 @@
 # Tool Calling Lab
 
+<!-- at-a-glance -->
+[![ci](https://github.com/pavan139/tool-calling-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/pavan139/tool-calling-lab/actions/workflows/ci.yml) ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
+
+| | |
+| --- | --- |
+| **Problem** | A tool call can parse and still be wrong: missing item, illegal route, dropped action. |
+| **Result** | Execution-based scoring feeds LoRA SFT and DPO data; **40** tests, including bitwise-identical resume checks on tiny weights. |
+| **Try it** | `pip install -e .` then `python -m tool_calling_lab evaluate --count 36 --output artifacts/reference.json` |
+<!-- /at-a-glance -->
+
+
 ```text
 Go 2 cells east. Pick up ruby.
           |
