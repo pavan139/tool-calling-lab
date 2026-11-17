@@ -25,7 +25,7 @@ Compiling the sentence is only the first check. The item must exist at the desti
 Python 3.11 or later is enough for the simulator and reference experiment:
 
 ```bash
-python -m pip install -e . --no-build-isolation
+python -m pip install -e .
 python -m tool_calling_lab evaluate --count 36 --output artifacts/reference.json
 python -m tool_calling_lab preferences --split train --count 12 --output artifacts/preferences.json
 ```
