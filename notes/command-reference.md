@@ -19,7 +19,7 @@ flowchart LR
 From this project directory:
 
 ```bash
-python -m pip install -e . --no-build-isolation
+python -m pip install -e .
 python -m tool_calling_lab demo
 python -m tool_calling_lab demo --output artifacts/demo.json
 python -m tool_calling_lab evaluate --count 36 --output artifacts/reference.json
